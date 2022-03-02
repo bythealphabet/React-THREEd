@@ -1,14 +1,14 @@
 {
-  "name": "react-ts",
+  "name": "react-three-d",
   "version": "1.0.0",
-  "description": "react18 webpack5 with typescript template",
+  "description": "A webgl React project ",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --env mode=development",
     "prod": "webpack --env mode=production"
   },
-  "repository": "git@github.com:bythealphabet/react-ts.git",
-  "author": "bythealphabet <lucas@bythealphabet.com>",
+  "repository": "git@github.com:bythealphabet/react-three-d.git",
+  "author": "bythealphabet",
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.2",
