@@ -1,15 +1,24 @@
 import React from "react";
-import WebGlCanvas from "./models";
+import { Canvas } from "@react-three/fiber";
 import Box from "./models/box/box";
-import Sphere from "./models/sphere/sphere";
+import Scene from "./models/sceneModel";
 
-function MainCanvas() {
+const lightPosition = { x: 10, y: 10, z: 10 };
+
+const MainCanvas = () => {
+  const { x, y, z } = lightPosition;
+
   return (
-    <WebGlCanvas lightPosition={{ x: 10, y: 10, z: 10 }}>
-      <Box position={[-6, -3, -10.3]} />
-      <Box position={[1.2, 0, 0]} />
-      <Sphere position={[20, 1, -20]} />
-    </WebGlCanvas>
+    <div className="webgl-box">
+      <Canvas>
+        <Scene />
+        <color attach="background" args={[0, 0, 0]} />
+        <ambientLight />
+        <pointLight position={[x, y, z]} />
+        <Box position={[0, 0, 2]} />
+      </Canvas>
+    </div>
   );
-}
+};
+
 export default MainCanvas;

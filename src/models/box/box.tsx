@@ -10,6 +10,7 @@ const Box = (props: JSX.IntrinsicElements["mesh"]) => {
     if (!mesh || !mesh.current) return;
 
     mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
   });
 
   return (
@@ -21,8 +22,8 @@ const Box = (props: JSX.IntrinsicElements["mesh"]) => {
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+      <boxGeometry />
+      <meshBasicMaterial color={hovered ? "hotpink" : "orange"} wireframe />
     </mesh>
   );
 };

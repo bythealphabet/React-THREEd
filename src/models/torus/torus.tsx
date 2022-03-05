@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
-import THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
-const Sphere = (props: JSX.IntrinsicElements["mesh"]) => {
+const Torus = (props: JSX.IntrinsicElements["mesh"]) => {
   const mesh = useRef<THREE.Mesh>(null);
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
@@ -22,9 +21,9 @@ const Sphere = (props: JSX.IntrinsicElements["mesh"]) => {
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <sphereGeometry args={[8, 50, 32]} />
+      <torusGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
     </mesh>
   );
 };
-export default Sphere;
+export default Torus;
